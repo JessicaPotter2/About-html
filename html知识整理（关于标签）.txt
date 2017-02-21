@@ -1,0 +1,43 @@
+<script type="text/javascript">
+<!--
+function displayMsg()
+{
+  alert("Hello World!")
+}
+//-->
+</script>
+命令行最后的两个正斜杠（//）是JavaScript的注释符号。这确保JavaScript不会执行-->标签。
+在HTML4.01中，<!DOCTYPE>声明需引用DTD（文档类型声明），因为HTML4.01是基于SGML（Standard Generalized Markup Language 标准通用标记语言）。DTD指定了标记语言的规则，确保了浏览器能够正确的渲染内容。HTML5不是基于SGML，因此不需要引用DTD。给HTML文档添加<!DOCTYPE>声明，能够确保浏览器能够预先知道文档类型。
+HTML 4.01 规定了三种不同的 <!DOCTYPE> 声明，分别是：Strict、Transitional 和 Frameset。
+常见的 DOCTYPE 声明
+HTML 5
+<!DOCTYPE html>
+HTML 4.01 Strict
+
+这个 DTD 包含所有 HTML 元素和属性，但不包括表象或过时的元素（如 font ）。框架集是不允许的。
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+HTML 4.01 Transitional
+
+这个 DTD 包含所有 HTML 元素和属性，包括表象或过时的元素（如 font ）。框架集是不允许的。
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+HTML 4.01 Frameset
+
+这个 DTD 与 HTML 4.01 Transitional 相同，但是允许使用框架集内容。
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+XHTML 1.0 Strict
+
+这个 DTD 包含所有 HTML 元素和属性，但不包括表象或过时的元素（如 font ）。框架集是不允许的。结构必须按标准格式的 XML 进行书写。
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+XHTML 1.0 Transitional
+
+这个 DTD 包含所有 HTML 元素和属性，包括表象或过时的元素（如 font ）。框架集是不允许的。结构必须按标准格式的 XML 进行书写。
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+XHTML 1.0 Frameset
+
+这个 DTD 与 XHTML 1.0 Transitional 相同，但是允许使用框架集内容。
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+XHTML 1.1
+
+这个 DTD 与 XHTML 1.0 Strict 相同，但是允许您添加模块（例如为东亚语言提供 ruby 支持）。
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+a标签如果没有使用 href 属性，则不能使用 hreflang、media、rel、target 以及 type 属性。通常在当前浏览器窗口中显示被链接页面，除非规定了其他 target。在 HTML 4.01 中，<a> 标签既可以是超链接，也可以是锚。在 HTML5 中，<a> 标签是超链接，但是假如没有 href 属性，它仅仅是超链接的一个占位符。

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>——文档类型说明（doctypes)：用为链接通过自动拼写检查和其他有用的操作来让HTML页面遵守特定规则来表现为好的HTML。有助于浏览器正确显示网页。不区分大小写。
+<head></head>包含所有和页面相关的信息（如被想被搜索引擎搜索到的关键字（keywords）和页面描述，CSS样式表和字符编码声明等），用户看不到。
+HTML（Hypertext Markup Language):超文本标记语言
+href(hypertext reference)
+HTML元素包括html标签和内容
+在XHTML，XML以及未来版本的HTML中，所有元素都必须被关闭，在开始标签中添加斜杠，如<br/>，是关闭空元素的正确方法，HTML，XHTML和XML都接受这种方式，即使<br>在所有浏览器中都是有效的，但使用<br/>其实是更长远的保障。
+HTML标签对大小写不敏感，但是W3C在HTML4中推荐使用小写，在未来（X)HTML版本中强制使用小写。
+在某些个别情况下，如属性本身就包含双引号，那属性必须用单引号，如name='Jessica "Potter"'
+大多数HTML元素都有的属性：class，id,style,title.
+搜索引擎使用标题作为网页的结构和内容编制索引。
+一般用<strong>（定义加重语气）替换<b>来实现加粗效果，用，<em>（定义着重文字）来替换<i>实现斜体。
+<ins>定义插入字，<del>定义删除字。<ins>和<del>一起使用，描述文档中的修正和更新，浏览器通常会在已删除文本上添加一条删除线，在新插入文本上添加一条下划线。
+<code>定义计算机代码。<kbd>定义键盘码。<samp>定义计算机代码样本。<var>定义变量。<pre>定义预格式文本。<abbr>定义缩写。<abbr title="etcetera">etc.</abbr>在某些浏览器中，将鼠标移到缩略词上时，title用于展示表达的完整版本。<bdo>定义文字方向。<blockquote>定义长的引用。<q>定义短的引用语。<cite>定义引用，引证。<dfn>定义一个定义项目。
+链接的id属性可以用于创建在一个HTML文档书签标记（不以任何特殊方式显示，不可见）。
+书写链接时，请始终将正斜杠添加到子文件夹，不添加时，如：href="http://www.runoob.com/html",会向服务及产生两次HTTP请求。因为服务器会添加正斜杠到这个地址，然后创建一个新的请求，如：href="http://www.runoob.com/html/".
+可以添加在头部区域的元素标签为：<title>,<style>,<meta>,<link>,<script>,<noscript>,<base>.
+<base>标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接：
+<base href="http://www.runoob.com/images/" target="_blank">
+<meta>标签提供了元数据，不显示在页面上，但会被浏览器解析。META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者和其他元数据。元数据可以用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他Web服务。
+<meta name="keywords" content="HTML,CSS,XML,XHTML,JavaScript">
+<meta name="description" content="my web">
+<meta name="author" content="Jessica Potter">
+<meta http-equiv="refresh" content="30">每30秒刷新当前页面
+早期背景色属性（background-color）是使用bgcolor属性定义。
+在HTML4，原来支持定义HTML元素样式的标签和属性已被弃用，如：<font>,<center>,<strike>.bgcolor,align.
+<img>默认对齐：align="bottom"，align属性已废弃。
+<th>定义表头，多数浏览器中粗体居中显示。
+Cell padding创建单元格内容与其边框之间的空白。
+Cell spacing创建单元格之间的距离。
+<colgroup>标签对表格中的列进行组合，以便对其进行格式化。只能在table元素内，在任何一个caption元素之后，任何一个thead，tbody,tfoot,tr元素之前使用。如果想对colgroup中的某列定义不同的属性，在colgroup内使用<col>标签。
+<table>
+	<colgroup>
+		<col span="2" style="background-color: red;">
+		<col style="background-color: yellow;">
+	</colgroup>
+	<tr>
+		<th>ISBN</thead>
+		<th>Title</thead>
+		<th>Price</th>
+	</tr>
+	<tr>
+		<td>3476896</td>
+		<td>My first HTML</td>
+		<td>$60</td>
+	</tr>
+</table>
+通过使用thead（表头）,tbody（主体）,tfoot（页脚）,使浏览器有能力支持独立于表格表头和表格页脚的表格主体滚动。当包含多个页面的长表格被打印时，表格的表头和页脚可被打印在包含表格数据的每张页面上。
+有序列表的type= a,A,I（大写罗马数字）,i（小写罗马数字）时改变序号样式，默认阿拉伯数字。无序列表的list-style-type属性为disc（圆点列表，默认）,circle（空心圆列表）,square（正方形列表）时改变无序样式。
+表单form本身并不可见，在大多数浏览器中，文本域（input的type为text）的缺省宽度是20个字符。
+使用iframe来显示目标链接页面，目标链接的属性必须使用iframe的属性，如：
+<iframe src="http://www.baidu.com/" name="iframe_a"></iframe>
+<p><a href="http://www.runoob.com" target="iframe_a">Runoob</p>
+<noscript>标签提供无法使用脚本时的替代内容，如浏览器禁用脚本时，或浏览器不支持客户端脚本时。<noscript>标签可包含普通HTML页面的body元素中能够找到的所有元素。只有在浏览器不支持脚本或者禁用脚本时才会显示<noscript>中的内容。
+如果希望正确地显示预留字符，我们必须在HTML源代码中使用字符实体（character entities），如小于号：&lt;或&#60;或&#060;使用实体名易于记忆，但是浏览器并不支持所有的实体名，对实体数字的支持却很好。实体名称对大小写敏感。
+URL统一资源定位符：
+http://www.baidu.com/html/html-tutoria.html
+scheme://host.domain:port/path/filename
+scheme:定义因特网服务的类型，如http
+host：定义域主机，如www
+domain：定义因特网域名，如baidu.com
+：port：定义主机上的端口号，如http的默认端口号80
+path：定义服务器上的路径，若省略则文档必须位于网站的根目录中
+filename:定义文档/资源的名称
+
+http（超文本传输协议）以http://开头的普通网页，不加密。https（安全超文本传输协议）安全网页，加密所有信息交换。
+URL只能使用ASCII字符集来通过因特网进行发送。由于URL常常会包含ASCII集合之外的字符，URL必须转换为有效的ASCII格式，URL编码使用“%”气候跟随两位的十六进制数来替换非ASCII字符。URL不能包含空格。URL编码通常使用+来替换空格。
+
+
+
+
+
+
+
+
+
+
+

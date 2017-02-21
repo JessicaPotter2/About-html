@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="300">
+	<title>文本格式化标签演示</title>
+	<base href="http://www.runoob.com/images/" target="_blank">
+</head>
+<body>
+	<p>
+	<b>我是粗体字(b)</b><br/>
+	<strong>我是strong效果的粗体字</strong><br/>
+	<i>我是斜体字(i)</i><br/>
+	<em>我是em效果的斜体字</em><br/>
+	<small>我是小号字small</small><br/>
+	我是<sub>下标字sub</sub><br/>
+	我是<sup>上标字sup</sup><br/>
+	我是<del>删除字del</del><ins>插入字ins</ins><br/>
+	<code>计算机代码code效果</code><br/>
+	<kbd>键盘码kbd效果</kbd><br/>
+	<samp>计算机代码样本samp效果</samp><br/>
+	<var>变量var效果</var><br/>
+	<pre>预    格式   文本pre效果</pre><br/>
+	缩写abbr效果<abbr title="World Wide Web">WWW</abbr><br/>
+	<address>这是地址address效果</address><br/>
+	<bdo dir="rtl">定义文字方向bdo效果，dir="rtl"</bdo><br/>
+	<blockquote>这是长引用blockquote效果</blockquote><br/>
+	<q>这是短引用q效果</q><br/>
+	这是<cite>定义引用，引证</cite>的cite的效果<br/>
+	<dfn>定义项目dfn效果</dfn><br/>
+	</p>
+	<img src="logo.png">这里设置了不完全的图片地址logo.png，因为在base标签内设置了所有连接默认的URL，所以图片地址为“http://www.runoob.com/images/logo.png”<br/>
+	<a href="http://www.runoob.com">菜鸟教程</a>这个链接会在新窗口打开，即便没有设置target属性，在base标签中设置了target属性。
+	<div style="opacity:0.5;position:absolute;left:50px;width:300px;height:150px;background-color:#40B3DF"></div>
+
+<div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;">
+
+<div style="opacity:0.3;position:absolute;left:120px;width:100px;height:200px;background-color:#8AC007"></div>
+
+<h3>Look! Styles and colors</h3>
+
+<div style="letter-spacing:12px;">Manipulate Text</div>
+
+<div style="color:#40B3DF;">Colors
+<span style="background-color:#B4009E;color:#ffffff;">Boxes</span>
+</div>
+
+<div style="color:#000000;">and more...</div>
+
+</div>
+<div style="opacity: 0.7;position: absolute;left: 100px;width: 400px;height: 200px;background-color: #ee883a"></div>
+<div style="font-family: verdana;padding:20px;border-radius:10px;border:20px solid #40D3DF;">
+<div style="opacity: 0.4;position: absolute;left: 200px;width: 200px;height: 300px;background-color: #8ac008"></div>
+<h3>Style and Colors is waiting for you!</h3>
+<div style="letter-spacing: 15px;">Jessica Potter</div>
+<div style="color: #40b3df;">Colors<span style="background-color: #b4009e;color: #fff;">Box</span></div>
+<div style="color: #000">Welcome!</div>
+</div>
+<table>
+	<colgroup>
+		<col span="2" style="background-color: red;">
+		<col style="background-color: yellow;">
+	</colgroup>
+	<thead>
+	<tr>
+		<th>ISBN</th>
+		<th>Title</th>
+		<th>Price</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>3476896</td>
+		<td>My first HTML</td>
+		<td>$60</td>
+	</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>页脚</td>
+			<td>页脚</td>
+			<td>页脚</td>
+		</tr>
+	</tfoot>
+</table>
+<form action="">
+<fieldset>
+<legend>Personal information:</legend>
+Name:<input type="text" name="username" size="30"><br/>
+E-mail:<input type="text" name="mail" size="30"><br/>
+Date of birth:<input type="text" name="birth" size="10">
+</fieldset>
+</form>
+<h3>发送邮件到cumtyeyunjiao@163.com？</h3>
+<form action="MAILTO:cumtyeyunjiao@163.com" method="post" enctype="text/plain">
+	Name:<br>
+	<input type="text" name="name" value="your name"><br>
+	E-mail:<br>
+	<input type="text" name="mail" value="your mail"><br>
+	Comment:<br>
+	<input type="text" name="comment" value="your comment" size="50"><br><br>
+	<input type="submit" value="发送">
+	<input type="reset" value="重置">
+</form>
+<h3>通过optgroup标签把相关的选项组合在一起</h3>
+<select>
+	<optgroup label="Swedish Cars">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+	</optgroup>
+	<optgroup label="German Cars">
+		<option value="mercedes">Mercedes</option>
+		<option value="audi">Audi</option>
+	</optgroup>
+</select>
+<h4>指定一个预先定义的输入控件选项列表，IE9及以下不支持，Safari不支持</h4>
+<input list="browsers" name="browsers">
+<datalist id="browsers">
+	<option value="Internet Explorer"></option>
+	<option value="Firefox"></option>
+	<option value="Chrome"></option>
+	<option value="Opera"></option>
+	<option value="Safari"></option>
+</datalist>
+<p>iframe</p>
+<iframe src="http://www.w3cschool.cc/" width="200" height="200" frameborder="0">
+	<p>您的浏览器不支持iframe 标签。</p>
+</iframe>
+<p>使用iframe来显示目标链接页面</p>
+<iframe src="http://www.baidu.com/" name="iframe_a"></iframe>
+<p><a href="http://www.runoob.com" target="iframe_a">Runoob</p>
+</body>
+</html>
