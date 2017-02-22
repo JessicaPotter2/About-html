@@ -41,3 +41,31 @@ XHTML 1.1
 这个 DTD 与 XHTML 1.0 Strict 相同，但是允许您添加模块（例如为东亚语言提供 ruby 支持）。
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
 a标签如果没有使用 href 属性，则不能使用 hreflang、media、rel、target 以及 type 属性。通常在当前浏览器窗口中显示被链接页面，除非规定了其他 target。在 HTML 4.01 中，<a> 标签既可以是超链接，也可以是锚。在 HTML5 中，<a> 标签是超链接，但是假如没有 href 属性，它仅仅是超链接的一个占位符。
+HTML5 已不再支持 <a> 标签的 coords 属性。coords 属性通常与 shape 属性一起使用，两个属性可以规定 <object>或 <img> 元素中链接的尺寸、形状和位置。左上角的坐标是 0,0。如需创建能够在所有浏览器中运行的图像映射，请使用 <area> 元素。目前只有Firefox 和 Opera浏览器支持coords 属性。
+ <a> 标签的 hreflang 属性用于指定被链接文档的语言。该属性只有设置了href属性才能起作用。和 lang 属性不同的是，hreflang 属性不会指定标签中的内容所使用的语言，而是指定被 href 属性调用的文档所使用的语言。
+<a target="_blank|_self|_parent|_top|framename"> 
+_blank:在新窗口中打开。_self:默认，在相同的框架中打开。_parent:在父框架集中打开。_top：在整个窗口中打开被链接文档。framename：在指定框架中打开被链接文档。
+<abbr> 标签用来表示一个缩写词或者首字母缩略词，如"WWW"或者"NATO"。通过对缩写词语进行标记，您就能够为浏览器、拼写检查程序、翻译系统以及搜索引擎分度器提供有用的信息。
+<acronym>标签定义首字母缩略词。HTML5不支持<acronym>。
+<address> 标签定义文档作者/所有者的联系信息。位于 <body> 元素内部，表示该文档作者/所有者的联系信息。位于 <article> 元素内部，表示该文章作者/所有者的联系信息。文本通常呈现为斜体。大多数浏览器会在该元素的前后添加换行。
+HTML4.01不支持<article>标签。
+HTML5 不支持 <applet> 标签。请使用 <object> 标签代替它。在 HTML 4.01 中，<applet> 元素 已废弃。<applet> 标签定义嵌入的 applet。该元素的必须属性：code(=URL,规定Java applet的文件名），object（=name,规定包含该applet的一系列版本的资源名称）。
+<area> 标签定义图像映射内部的区域（图像映射指的是带有可点击区域的图像）。始终嵌套在 <map> 标签内部。<img> 标签中的 usemap 属性与 <map> 元素中的 name 相关联，以创建图像与映射之间的关系：
+<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+MIME（Multipurpose Internet Mail Extensions)
+<article> 标签（HTML5新标签）定义独立的内容。且必须是有意义的且必须是独立于文档的其余部分。潜在来源：论坛帖子，博客文章，新闻故事，评论。（IE8及以下不支持）。
+<aside>（HTML5新标签） 标签定义 <article> 标签外的内容。且应该与附近的内容相关。可用于作章侧栏。
+<audio> 标签定义声音，比如音乐或其他音频流。目前，<audio> 元素支持的3种文件格式：MP3（都支持）、Wav（IE不支持）、Ogg（IE和Safari不支持）。可以在 <audio> 和 </audio> 之间放置文本内容，这些文本信息将会被显示在那些不支持 <audio>（HTML5新标签） 标签的浏览器中。属性：autoplay：音频就绪后自动播放，controls:显示音频控件（如播放/暂停按钮),loop:循环播放，muted：静音，preload（IE不支持）（当网页加载时，音频是否默认被加载以及如何被加载）:auto(页面加载后载入整个音频），meta（只载入元数据），none(不载入音频）。
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  您的浏览器不支持 audio 元素。
+</audio>
+HTML5规范声明：标题应该用<h1>-<h6>表示，被强调的文本应该用<em>标签表示，重要的文本应该用<strong>标签表示，被标记的或者高亮显示的文本应该用<mark>标签表示。
+<base> 标签为页面上的所有的相对链接规定默认 URL 或默认目标。在一个文档中，最多能使用一个 <base> 元素。且必须位于 <head> 元素内部。把 <base> 标签排在 <head> 元素中第一个元素的位置，这样 head 区域中其他元素就可以使用 <base> 元素中的信息了。如果使用了 <base> 标签，则必须具备 href 属性或者 target 属性或者两个属性都具备。不支持任何事件属性。
+HTML5 不支持 <basefont> 标签。请用 CSS 代替。在 HTML 4.01 中，<basefont> 元素 已废弃。<basefont> 标签定义文档中所有文本的默认颜色、大小和字体。
