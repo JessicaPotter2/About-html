@@ -1,0 +1,94 @@
+正则表达式在线工具：http://regexper.com
+正则表达式由两种基本字符类型组成：
+原义文本字符（如abc，a等）
+元字符（在正则表达式中有特殊含义的非字母字符）
+字符类
+可以使用元字符[]来构建一个简单的类
+所谓类是指符合某些特征的对象，一个泛指，而不是特指某个字符
+表达式[abc]把字符a或b或c归为一类，表达式可以匹配这类的字符，表示是a或b或c，如:
+'a1b2c3d4'.replace(/[abc]/g,'x')
+"x1x2x3d4"
+字符类取反：
+使用元字符^创建反向类（不属于某类的内容）/负向类
+表达式[^abc]表示不是字符a或b或c的内容
+'a1b2c3d4'.replace(/[^abc]/g,'x')
+"axbxcxxx"
+范围类
+在[]内是可以连写的
+小写字母a-z匹配
+'a1b3c6f8t0z4'.replace(/[a-z]/g,'Q')
+"Q1Q3Q6Q8Q0Q4"
+大小写字母完全匹配
+'a1b3c6f8t0z4ASDFGHHJJ'.replace(/[a-zA-Z]/g,'Q')
+"Q1Q3Q6Q8Q0Q4QQQQQQQQQ"
+匹配数字
+'2016-10-3'.replace(/[0-9]/g,'X')
+"XXXX-XX-X"
+匹配数字和横线
+'2016-10-3'.replace(/[0-9-]/g,'X')
+"XXXXXXXXX"
+预定义类
+ab[0-9][^\r\n]   即 ab\d.
+边界
+'This is a boy'.replace(/is/g,'0')
+"Th0 0 a boy"
+'This is a boy'.replace(/\bis\b/g,'0')
+"This 0 a boy"
+'This is a boy'.replace(/\Bis\b/g,'0')
+"Th0 is a boy"
+'@123@abc@'.replace(/@./g,'Q')
+"Q23Qbc@"
+'@123@abc@'.replace(/^@./g,'Q')
+"Q23@abc@"
+'@123@abc@'.replace(/@.$/g,'Q')
+"@123@abc@"
+'@123@abc@'.replace(/.@/g,'Q')
+"@12QabQ"
+'@123@abc@'.replace(/.@$/g,'Q')
+"@123@abQ"
+量词
+\d{20}\w\d?\w+\d*\d{3}\w{3,5}\d{3,}
+贪婪模式
+'12345678'.replace(/\d{3,6}/g,'Q')
+"Q78"
+尽可能多地匹配
+贪婪模式：让正则表达式尽可能少地匹配，一旦成功匹配不再继续尝试
+方法：在量词后加？
+'12345678'.match(/\d{3,6}?/g,'Q')
+["123", "456"]
+'12345678'.replace(/\d{3,6}?/g,'Q')
+"QQ78"
+分组
+byron{3}表示n重复三次，而不是byron重复三次
+使用()可以达到分组的功能，使量词作用于分组：
+(byron){3}表示byron重复三次
+'a1b2c3d4e4'.replace(/([a-z]\d){3}/g,'Q')
+"Qd4e4"
+'a1b2c3d4e4'.replace(/(\w\d){3}/g,'Q')
+"Qd4e4"
+或  |
+Byron|Casper
+Byr(on|Ca)sper  表示on和Ca是可换的
+'ByronCasper'.replace(/Byron|Casper/g,'Q')
+"QQ"
+'ByronsperByrCasper'.replace(/Byr(on|Ca)sper/g,'Q')
+"QQ"
+反向引用
+'2016-10-06'.replace(/\d{4}-\d{2}-\d{2}/g,'$2$3$1')
+"$2$3$1"
+'2016-10-06'.replace(/(\d{4})-(\d{2})-(\d{2})/g,'$2/$3/$1')
+"10/06/2016"
+用$来捕获分组，用()来进行分组
+忽略分组
+不希望捕获某些分组，只需要在分组内加上?:即可
+(?:Byron).(ok)
+
+前瞻
+正则表达式从文本头部向尾部开始解析，文本尾部方向，成为“前”
+前瞻就是在正则表达式匹配到规则的时候，向前检查是否符合断言，后顾/后瞻方向相反
+Javascript不支持后顾
+符合和不符合特定断言称为肯定/正向匹配和否定/负向匹配
+正向前瞻：exp(?=assert)
+负向前瞻：exp(?!assert)
+正向后顾：exp(?<=assert) Javascript不支持
+负向后顾：exp(?<!assert) Javascript不支持
